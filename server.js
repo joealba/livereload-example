@@ -11,6 +11,8 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
 
+app.use('/assets', express.static(path.join(__dirname, './assets')))
+
 server.listen(PORT, () => console.log("started"));
 reload(app);
 
