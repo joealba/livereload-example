@@ -1,5 +1,5 @@
 const express = require("express");
-const path = require('path');
+const path = require("path");
 const app = express();
 const http = require("http");
 const reload = require("reload");
@@ -7,12 +7,11 @@ const reload = require("reload");
 const server = http.createServer(app);
 const PORT = 4000;
 
-app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/index.html'));
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "/index.html"));
 });
 
-app.use('/assets', express.static(path.join(__dirname, './assets')))
+app.use("/assets", express.static(path.join(__dirname, "./assets")));
 
 server.listen(PORT, () => console.log("started"));
 reload(app);
-
